@@ -52,6 +52,7 @@ setup(name = "niftycloud",
       author = "Yudai Kato",
       author_email = "grandeur09@gmail.com",
       url = ["https://github.com/yudai09/niftycloud/"],
+      packages = ["niftycloud", "niftycloud.pyami", "niftycloud.cacerts", "niftycloud.vendored"],
       package_data = {
           "niftycloud.cacerts": ["cacerts.txt"],
           "niftycloud": ["endpoints.json"],
