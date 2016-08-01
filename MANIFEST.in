@@ -1,12 +1,12 @@
-include boto/cacerts/cacerts.txt
+include niftycloud/cacerts/cacerts.txt
 include README.rst
-include boto/file/README
+include niftycloud/file/README
 include .gitignore
 include pylintrc
-include boto/endpoints.json
-include boto/pyami/copybot.cfg
-include boto/services/sonofmmm.cfg
-include boto/mturk/test/*.doctest
-include boto/mturk/test/.gitignore
+include niftycloud/endpoints.json
+include niftycloud/pyami/copybot.cfg
+include niftycloud/services/sonofmmm.cfg
+include niftycloud/mturk/test/*.doctest
+include niftycloud/mturk/test/.gitignore
 recursive-include tests *.json *.py *.txt
 recursive-include docs *

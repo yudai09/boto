@@ -34,10 +34,10 @@ except ImportError:
 
 import sys
 
-from boto import __version__
+from niftycloud import __version__
 
 if sys.version_info <= (2, 5):
-    error = "ERROR: boto requires Python Version 2.6 or above...exiting."
+    error = "ERROR: niftycloud requires Python Version 2.6 or above...exiting."
     print(error, file=sys.stderr)
     sys.exit(1)
 
@@ -45,47 +45,16 @@ def readme():
     with open("README.rst") as f:
         return f.read()
 
-setup(name = "boto",
+setup(name = "niftycloud",
       version = __version__,
-      description = "Amazon Web Services Library",
+      description = "Nifty Cloud Library",
       long_description = readme(),
-      author = "Mitch Garnaat",
-      author_email = "mitch@garnaat.com",
-      scripts = ["bin/sdbadmin", "bin/elbadmin", "bin/cfadmin",
-                 "bin/s3put", "bin/fetch_file", "bin/launch_instance",
-                 "bin/list_instances", "bin/taskadmin", "bin/kill_instance",
-                 "bin/bundle_image", "bin/pyami_sendmail", "bin/lss3",
-                 "bin/cq", "bin/route53", "bin/cwutil", "bin/instance_events",
-                 "bin/asadmin", "bin/glacier", "bin/mturk",
-                 "bin/dynamodb_dump", "bin/dynamodb_load"],
-      url = "https://github.com/boto/boto/",
-      packages = ["boto", "boto.sqs", "boto.s3", "boto.gs", "boto.file",
-                  "boto.ec2", "boto.ec2.cloudwatch", "boto.ec2.autoscale",
-                  "boto.ec2.elb", "boto.sdb", "boto.cacerts",
-                  "boto.sdb.db", "boto.sdb.db.manager",
-                  "boto.mturk", "boto.pyami",
-                  "boto.pyami.installers", "boto.pyami.installers.ubuntu",
-                  "boto.mashups", "boto.contrib", "boto.manage",
-                  "boto.services", "boto.cloudfront",
-                  "boto.roboto", "boto.rds", "boto.vpc", "boto.fps",
-                  "boto.fps", "boto.emr", "boto.emr", "boto.sns",
-                  "boto.ecs", "boto.iam", "boto.route53", "boto.ses",
-                  "boto.cloudformation", "boto.sts", "boto.dynamodb",
-                  "boto.swf", "boto.mws", "boto.cloudsearch", "boto.glacier",
-                  "boto.beanstalk", "boto.datapipeline", "boto.elasticache",
-                  "boto.elastictranscoder", "boto.opsworks", "boto.redshift",
-                  "boto.dynamodb2", "boto.support", "boto.cloudtrail",
-                  "boto.directconnect", "boto.kinesis", "boto.rds2",
-                  "boto.cloudsearch2", "boto.logs", "boto.vendored",
-                  "boto.route53.domains", "boto.cognito",
-                  "boto.cognito.identity", "boto.cognito.sync",
-                  "boto.cloudsearchdomain", "boto.kms",
-                  "boto.awslambda", "boto.codedeploy", "boto.configservice",
-                  "boto.cloudhsm", "boto.ec2containerservice",
-                  "boto.machinelearning"],
+      author = "Yudai Kato",
+      author_email = "grandeur09@gmail.com",
+      url = ["https://github.com/yudai09/niftycloud/"],
       package_data = {
-          "boto.cacerts": ["cacerts.txt"],
-          "boto": ["endpoints.json"],
+          "niftycloud.cacerts": ["cacerts.txt"],
+          "niftycloud": ["endpoints.json"],
       },
       license = "MIT",
       platforms = "Posix; MacOS X; Windows",
