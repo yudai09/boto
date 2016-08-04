@@ -1105,7 +1105,7 @@ class AWSQueryConnection(AWSAuthConnection):
     def get_utf8_value(self, value):
         return niftycloud.utils.get_utf8_value(value)
 
-    def make_request(self, action, params=None, path='/', verb='GET'):
+    def make_request(self, action, params=None, path='/api/', verb='GET'):
         http_request = self.build_base_http_request(verb, path, None,
                                                     params, {}, '',
                                                     self.host)
@@ -1163,7 +1163,7 @@ class AWSQueryConnection(AWSAuthConnection):
 
     # generics
 
-    def get_list(self, action, params, markers, path='/',
+    def get_list(self, action, params, markers, path='/api/',
                  parent=None, verb='GET'):
         if not parent:
             parent = self
@@ -1185,7 +1185,7 @@ class AWSQueryConnection(AWSAuthConnection):
             niftycloud.log.error('%s' % body)
             raise self.ResponseError(response.status, response.reason, body)
 
-    def get_object(self, action, params, cls, path='/',
+    def get_object(self, action, params, cls, path='/api/',
                    parent=None, verb='GET'):
         if not parent:
             parent = self
@@ -1207,7 +1207,7 @@ class AWSQueryConnection(AWSAuthConnection):
             niftycloud.log.error('%s' % body)
             raise self.ResponseError(response.status, response.reason, body)
 
-    def get_status(self, action, params, path='/', parent=None, verb='GET'):
+    def get_status(self, action, params, path='/api/', parent=None, verb='GET'):
         if not parent:
             parent = self
         response = self.make_request(action, params, path, verb)

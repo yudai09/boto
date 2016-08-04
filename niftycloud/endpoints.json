@@ -4,6 +4,13 @@
         "jp-east-2": "east-2.cp.cloud.nifty.com",
         "jp-east-3": "east-3.cp.cloud.nifty.com",
         "jp-west-1": "west-1.cp.cloud.nifty.com",
-        "jp-west-2": "west-2.cp.cloud.nifty.com",
+        "jp-west-2": "west-2.cp.cloud.nifty.com"
     },
+    "loadbalancer": {
+	"jp-east-1": "east-1.cp.cloud.nifty.com",
+        "jp-east-2": "east-2.cp.cloud.nifty.com",
+        "jp-east-3": "east-3.cp.cloud.nifty.com",
+        "jp-west-1": "west-1.cp.cloud.nifty.com",
+        "jp-west-2": "west-2.cp.cloud.nifty.com"
+    }
 }

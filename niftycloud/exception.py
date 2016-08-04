@@ -326,14 +326,14 @@ class GSResponseError(StorageResponseError):
     pass
 
 
-class EC2ResponseError(NiftycloudServerError):
+class ComputingResponseError(NiftycloudServerError):
     """
-    Error in response from EC2.
+    Error in response from Computing.
     """
     def __init__(self, status, reason, body=None):
         self.errors = None
         self._errorResultSet = []
-        super(EC2ResponseError, self).__init__(status, reason, body)
+        super(ComputingResponseError, self).__init__(status, reason, body)
         self.errors = [
             (e.error_code, e.error_message) for e in self._errorResultSet]
         if len(self.errors):
@@ -341,7 +341,7 @@ class EC2ResponseError(NiftycloudServerError):
 
     def startElement(self, name, attrs, connection):
         if name == 'Errors':
-            self._errorResultSet = ResultSet([('Error', _EC2Error)])
+            self._errorResultSet = ResultSet([('Error', _ComputingError)])
             return self._errorResultSet
         else:
             return None
@@ -353,7 +353,7 @@ class EC2ResponseError(NiftycloudServerError):
             return None  # don't call subclass here
 
     def _cleanupParsedProperties(self):
-        super(EC2ResponseError, self)._cleanupParsedProperties()
+        super(ComputingResponseError, self)._cleanupParsedProperties()
         self._errorResultSet = []
         for p in ('errors'):
             setattr(self, p, None)
@@ -398,7 +398,7 @@ class EmrResponseError(NiftycloudServerError):
     pass
 
 
-class _EC2Error(object):
+class _ComputingError(object):
     def __init__(self, connection=None):
         self.connection = connection
         self.error_code = None
